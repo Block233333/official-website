@@ -21,29 +21,29 @@
         <div class="swiper-button-next"></div>
       </div>
     </div>
-    <!-- 大数据管理系统 -->
+    <!-- 智慧命运平台 -->
     <div id="bigData" class="container-fuild">
       <div class="row bigData-container">
         <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="大数据管理系统">
+          <img class="img-responsive" src="@/assets/img/img1.png" alt="智慧命运平台">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
-            大数据管理系统
-            <small>/ Big Data Management System</small>
+            人生命运论坛
+            <small>/ Life & Destiny forum</small>
           </h2>
-          <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
-          <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
-          <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
+          <p>基于千年传统智慧与现代科学融合的创新型平台，以「利人利己」为精神内核，通过可视化命运轨迹系统与多维人生论坛，助您掌握命运科学规律。我们提供从基础命运分析到深度哲学探讨的全方位服务，涵盖生命认知、生存哲学、天体运行等多维度的智慧传承。</p>
+          <p>采用太极阴阳平衡设计理念，结合智能推荐算法与专业内容体系，为个人用户提供命运改进方案，为专业学者打造学术交流空间，构建传统命理学与现代科学对话的桥梁。</p>
+          <h2 class="system-feature">核心功能：命运分析引擎 &nbsp; 智能推荐系统 &nbsp; 多媒体交互论坛</h2>
+          <a href="#" class="btn btn-lg btn-block btn-info">立即探索</a>
         </div>
       </div>
     </div>
-    <!-- 您身边的IT专家 -->
+    <!-- 联系我们-->
     <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
-        <h1>您身边的IT专家</h1>
-        <h3>7x24小时提供出色的IT服务</h3>
+        <h1>命运不是偶然，而是可以预测、可以调整、可以优化的科学</h1>
+        <h3>知命者文化，融合古今智慧，为您开启命运管理的全新时代</h3>
         <button
           class="btn btn-default btn-sm"
           onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#3f3f3f';"
@@ -59,7 +59,7 @@
     <!-- 客户评价 -->
     <div id="customer" class="container-fuild">
       <div class="container customer-container">
-        <p class="customer-title text-center">客户评价</p>
+        <p class="customer-title text-center">顾问导师团队</p>
         <div class="swiper-container customer-swiper hidden-xs">
           <div class="swiper-wrapper">
             <div
@@ -143,136 +143,87 @@ export default {
     return {
       swiperList: [
         {
-          img: require("@/assets/img/banner1.png"),
+          img: require("@/assets/img/rollbanner1.jpeg"),
           path: "",
-          title: '您身边的IT专家1',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '洞悉命运真相',
+          content: '融合四柱八字与生命科学，精准解析人生轨迹，助您掌握命运规律',
         },
         {
-          img: require("@/assets/img/banner2.jpg"),
+          img: require("@/assets/img/rollbanner2.jpeg"),
           path: "",
-          title: '您身边的IT专家2',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '智能优化人生',
+          content: '基于天文周期与中医养生，定制智能作息/饮食方案，提升生命能量',
         },
         {
-          img: require("@/assets/img/banner1.png"),
+          img: require("@/assets/img/rollbanner3.jpeg"),
           path: "",
-          title: '您身边的IT专家3',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '传统智慧赋能',
+          content: '紫微斗数结合现代科学，智能评估住宅风水，打造最佳生存空间',
         },
         {
-          img: require("@/assets/img/banner2.jpg"),
+          img: require("@/assets/img/rollbanner4.jpeg"),
           path: "",
-          title: '您身边的IT专家4',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '权威导师护航',
+          content: '汇聚国学大师与科学专家，量身定制命运改进方案，破解人生困局',
         }
       ],
       customerList: [
         {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "算命,测运师",
+          content: "专业提供生辰八字、紫微斗数、奇门遁甲、卜卦、相学等传统命理分析，助您洞悉运势趋势，把握人生机遇。"
         },
         {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "中医师（道医,藏医）",
+          content: "融合道医、藏医精髓，提供体质调理、疾病预防等个性化中医养生方案，传承千年智慧。"
         },
         {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "西医师（生理,心理,精神科医师）",
+          content: "涵盖生理健康、心理疏导、营养管理、基因分析等领域，联合西医医师、催眠师、营养师提供科学健康指导。"
         },
         {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "国学专家",
+          content: "精通易学、玄学、风水学，融合儒释道智慧，为环境布局、人生决策提供传统文化解决方案。"
         },
         {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "科学领域顾问",
+          content: "结合生命科学、人体科学、天文学等前沿学科，用科学视角解读命运规律，提供创新改进方案。"
         },
         {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "命运规划导师",
+          content: "系统分析人生轨迹，诊断命运阻滞根源，量身定制涵盖命理调整、习惯改善、环境优化的综合改运方案。"
         },
         {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
+          logo: require("@/assets/img/person.jpeg"),
+          title: "家庭教育导师",
+          content: "专业指导家长识别儿童天赋潜能，规避成长风险，制定教育规划与人生定位，奠定卓越发展基础。"
         }
       ],
       serverList: [
         {
           logo: require("@/assets/img/tel.png"),
-          title: "核心优势1",
-          content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
+          title: "传统智慧与现代科学的深度融合",
+          content: "<p>双重方法论验证</p>四柱八字、紫微斗数等千年命理体系，与基因测序、天体物理学等现代学科交叉验证，确保命运解读的科学性与文化传承的严谨性"
         },
         {
           logo: require("@/assets/img/computer.png"),
-          title: "核心优势2",
-          content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
+          title: "跨领域权威专家联盟",
+          content: "<p>全维度智库支持，提供协助</p>国学大师、遗传学家、心理医师、环境科学家组成跨学科团队，覆盖命运改善的生理、心理、环境全链条"
         },
         {
           logo: require("@/assets/img/qq.png"),
-          title: "核心优势3",
-          content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
+          title: "全生命周期覆盖的解决方案",
+          content: "<p>命运重塑</p>基于大运周期规划职业转型、婚恋决策，提供风水布局与能量场强化支持"
         },
         {
           logo: require("@/assets/img/skill.png"),
-          title: "核心优势4",
-          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+          title: "科技赋能的场景化服务",
+          content: "<p>决策引擎</p>依据出生时间与天体运行周期，推荐签约、出行等关键行动的最佳时间窗口"
         }
       ]
     };
@@ -344,6 +295,7 @@ export default {
 /* 轮播图 */
 #swiper {
   height: 600px;
+  overflow: hidden;
 }
 #swiper .banner-swiper {
   width: 100%;
@@ -352,6 +304,8 @@ export default {
 #swiper .banner-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
+  object-fit: cover; /* 保持图片比例并填充容器 */
+  object-position: center; /* 居中显示图片 */
 }
 #swiper .banner-swiper .swiper-slide{
   position: relative;
@@ -400,8 +354,8 @@ export default {
 #contactUs {
   color: #fff;
   height: 400px;
-  background: url("../assets/img/contact_us_bg.jpg") 0 0 no-repeat;
-  background-size: 100% 100%;
+  background: url("../assets/img/contact_us.jpeg") center center no-repeat;
+  background-size: cover;
   transition: all ease 0.6s;
 }
 #contactUs .contactUs-container {
@@ -427,7 +381,7 @@ export default {
   background-size: 100% 100%;
 }
 #contactUs .contactUs-container .contactUs-contactWay span:nth-of-type(3) {
-  background: url("../assets/img/twitter.png") 0 0 no-repeat;
+  background: url("../assets/img/rednote.png") 0 0 no-repeat;
   background-size: 100% 100%;
 }
 

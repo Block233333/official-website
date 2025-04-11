@@ -7,25 +7,25 @@
           <div class="col-xs-12 col-sm-12 col-md-6">
             <form class="form-horizontal" role="form">
               <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">姓名</label>
+                <label for="name" class="col-sm-2 control-label">您的姓名</label>
                 <div class="col-sm-10 col-xs-12">
                   <input type="text" class="form-control" id="name" placeholder="请输入名字">
                 </div>
               </div>
               <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">邮箱</label>
+                <label for="email" class="col-sm-2 control-label">邮箱号</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
                 </div>
               </div>
               <div class="form-group">
-                <label for="tel" class="col-sm-2 control-label">电话</label>
+                <label for="tel" class="col-sm-2 control-label">联系电话</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="tel" placeholder="请输入电话">
                 </div>
               </div>
               <div class="form-group">
-                <label for="content" class="col-sm-2 control-label">内容</label>
+                <label for="content" class="col-sm-2 control-label">咨询内容</label>
                 <div class="col-sm-10">
                   <textarea class="form-control" id="content" rows="8" placeholder="请输入内容"></textarea>
                 </div>
@@ -55,7 +55,7 @@ export default {
   },
   mounted() {
     var map = new BMap.Map("map"); // 创建地图实例
-    var point = new BMap.Point(116.301841,40.156506); // 创建点坐标
+    var point = new BMap.Point(114.224683,22.290108); // 创建点坐标
     map.centerAndZoom(point, 18); // 初始化地图，设置中心点坐标和地图级别
     map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
     var marker = new BMap.Marker(point); // 创建标注
@@ -63,10 +63,10 @@ export default {
     var opts = {
       width: 50, // 信息窗口宽度
       height: 10, // 信息窗口高度
-      title: "黄元公寓" // 信息窗口标题
+      title: "知命者文化產業有限公司" // 信息窗口标题
     };
     var infoWindow = new BMap.InfoWindow(
-      "我的家",
+      "香港鰂魚涌華蘭路20號華蘭中心7樓7室",
       opts
     ); // 创建信息窗口对象
     map.openInfoWindow(infoWindow, map.getCenter()); // 打开信息窗口

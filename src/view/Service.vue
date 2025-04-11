@@ -33,24 +33,24 @@ export default {
             serviceList: [
                 {
                     id: 'section-1',
-                    title: '软件定制开发',
-                    eng_title: 'Customize App',
-                    img: require('@/assets/img/service1.jpg')
+                    title: '命运科学探究与咨询',
+                    eng_title: 'Fate Science Research & Consultation',
+                    img: require('@/assets/img/service1.jpeg')
                 },{
                     id: 'section-2',
-                    title: 'IT外包服务',
-                    eng_title: 'Outsourcing',
-                    img: require('@/assets/img/service2.jpg')
+                    title: '生命状态综合诊断',
+                    eng_title: 'Comprehensive Life Diagnosis',
+                    img: require('@/assets/img/service2.jpeg')
                 },{
                     id: 'section-3',
-                    title: '网上商城建设',
-                    eng_title: 'eCommerce Site',
-                    img: require('@/assets/img/service3.jpg')
+                    title: '智能环境与运程优化',
+                    eng_title: 'Smart Destiny Optimization',
+                    img: require('@/assets/img/service3.jpeg')
                 },{
                     id: 'section-4',
-                    title: 'iOS应用定制开发',
-                    eng_title: 'iOS App Dev',
-                    img: require('@/assets/img/service4.jpg')
+                    title: '导师团队定制化指导',
+                    eng_title: 'Expert Mentorship Programs',
+                    img: require('@/assets/img/service4.jpeg')
                 }
             ]
         }

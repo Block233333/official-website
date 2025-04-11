@@ -93,26 +93,26 @@ export default {
           children: []
         },
         {
-          name: "软件产品",
+          name: "平台介绍",
           path: "/software",
           children: [
             {
-              name: "智能小镇管理系统",
+              name: "人生论坛",
               path: "/software/smartTown"
             },
             {
-              name: "大数据管理系统",
+              name: "命运论坛",
               path: "/software/bigData"
             }
           ]
         },
         {
-          name: "相关服务",
+          name: "公司服务",
           path: "/service",
           children: []
         },
         {
-          name: "新闻动态",
+          name: "最新动态",
           path: "/newsinformation",
           children: []
         },
