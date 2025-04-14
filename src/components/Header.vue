@@ -5,11 +5,11 @@
     <div class="header-top container-fuild hidden-xs">
       <div class="container">
         <div class="server pull-left">
-          <span class="glyphicon glyphicon-earphone"></span>888-888-888
-          <span class="glyphicon glyphicon-envelope"></span>xxx@163.com
+          <span class="glyphicon glyphicon-earphone"></span>+852 2814 1083
+          <span class="glyphicon glyphicon-envelope"></span>zhimingzhe.com
           <span class="glyphicon glyphicon-time"></span>7x24小时为您服务
         </div>
-        <div class="shejiao pull-right">
+        <div class="shejiao pull-right" @click="goToContact" style="cursor: pointer;">
           <span class="glyphicon glyphicon-hand-right"></span>赶快联系我们吧！
           <span class="glyphicon glyphicon-hand-left"></span>
         </div>
@@ -121,11 +121,11 @@ export default {
           path: "/companyintroduction",
           children: []
         },
-        {
-          name: "工作机会",
-          path: "/jobchance",
-          children: []
-        },
+        // {
+        //   name: "工作机会",
+        //   path: "/jobchance",
+        //   children: []
+        // },
         {
           name: "联系我们",
           path: "/contactus",
@@ -137,7 +137,7 @@ export default {
   methods: {
     navClick(index, name) {
       this.navIndex = index;
-      sessionStorage.setItem('navIndex',index)
+      sessionStorage.setItem('navIndex', index);
       this.menuName = name;
     },
     menuClick() {
@@ -146,7 +146,48 @@ export default {
       } else {
         this.menuClass = "glyphicon glyphicon-menu-down";
       }
+    },
+    // 根据当前路由路径更新导航索引
+    updateNavIndex() {
+      const currentPath = this.$route.path;
+      const index = this.navList.findIndex(item => {
+        // 检查主路径
+        if (item.path === currentPath) return true;
+        // 检查子路径
+        if (item.children && item.children.length > 0) {
+          return item.children.some(child => child.path === currentPath);
+        }
+        return false;
+      });
+      
+      if (index !== -1) {
+        this.navIndex = index;
+        sessionStorage.setItem('navIndex', index);
+        this.menuName = this.navList[index].name;
+      }
+    },
+    
+    // 添加跳转到联系我们页面的方法
+    goToContact() {
+      const contactIndex = 6; // 联系我们在导航列表中的索引
+      this.navIndex = contactIndex;
+      sessionStorage.setItem('navIndex', contactIndex);
+      this.menuName = "联系我们";
+      this.$router.push({
+        path: '/contactus',
+        query: { scrollTop: 0 } // 添加查询参数，确保页面从顶部开始显示
+      });
+    },
+  },
+  watch: {
+    // 监听路由变化
+    '$route'() {
+      this.updateNavIndex();
     }
+  },
+  mounted() {
+    // 组件挂载时更新导航索引
+    this.updateNavIndex();
   }
 };
 </script>
@@ -155,6 +196,9 @@ export default {
 #header {
   background: #f4f4f4;
   transition: all ease 0.6s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100; /* 设置一个合适的z-index值 */
 }
 #header .header-top {
   height: 50px;
@@ -166,6 +210,11 @@ export default {
 /* 顶部的图标 */
 #header .header-top span {
   margin: 0 8px;
+}
+/* 添加顶部联系我们的悬停效果 */
+#header .shejiao:hover {
+  color: #3498db;
+  transition: all 0.3s ease;
 }
 /* 导航栏 */
 #header .header-nav {
@@ -258,7 +307,7 @@ export default {
   width: 168px;
   top: 80%;
   left: 0;
-  z-index: 999999;
+  z-index: 101; /* 确保二级菜单在一级菜单之上 */
   box-shadow: 0 0 3px 1px #ccc;
   background: #fff;
 }
