@@ -18,9 +18,10 @@
           <div class="col-md-4 col-sm-12 wow fadeInLeft">
             <div class="contact-info-card">
               <h3 class="info-title">联系方式</h3>
+              <!-- 联系信息部分的图标修改 -->
               <div class="info-item">
                 <div class="info-icon">
-                  <i class="fa fa-map-marker"></i>
+                  <img src="../assets/img/map-draw.png" alt="地址" class="contact-icon">
                 </div>
                 <div class="info-content">
                   <h4>公司地址</h4>
@@ -29,7 +30,7 @@
               </div>
               <div class="info-item">
                 <div class="info-icon">
-                  <i class="fa fa-phone"></i>
+                  <img src="../assets/img/phone.png" alt="电话" class="contact-icon">
                 </div>
                 <div class="info-content">
                   <h4>联系电话</h4>
@@ -38,7 +39,7 @@
               </div>
               <div class="info-item">
                 <div class="info-icon">
-                  <i class="fa fa-envelope"></i>
+                  <img src="../assets/img/accept-email.png" alt="邮箱" class="contact-icon">
                 </div>
                 <div class="info-content">
                   <h4>电子邮箱</h4>
@@ -47,7 +48,7 @@
               </div>
               <div class="info-item">
                 <div class="info-icon">
-                  <i class="fa fa-clock-o"></i>
+                  <img src="../assets/img/calendar-three.png" alt="时间" class="contact-icon">
                 </div>
                 <div class="info-content">
                   <h4>工作时间</h4>
@@ -55,16 +56,32 @@
                   <p>周六至周日: 10:00 - 16:00</p>
                 </div>
               </div>
+              <!-- 修改社交链接部分 -->
               <div class="social-links">
-                <a href="#" class="social-link" title="微信">
-                  <img src="@/assets/img/weixin.png" alt="微信" class="social-icon">
-                </a>
-                <a href="#" class="social-link" title="微博">
-                  <img src="@/assets/img/weibo.png" alt="微博" class="social-icon">
-                </a>
-                <a href="#" class="social-link" title="小红书">
-                  <img src="@/assets/img/rednote.png" alt="小红书" class="social-icon">
-                </a>
+                <div class="social-item">
+                  <a href="#" class="social-link" title="微信" @click.prevent="showQRCode('weixin')">
+                    <img src="@/assets/img/weixin.png" alt="微信" class="social-icon">
+                  </a>
+                  <div class="qr-popup" v-if="activeQR === 'weixin'">
+                    <img src="@/assets/img/wechat.png" alt="微信二维码" class="qr-code">
+                  </div>
+                </div>
+                <div class="social-item">
+                  <a href="#" class="social-link" title="微博" @click.prevent="showQRCode('weibo')">
+                    <img src="@/assets/img/weibo.png" alt="微博" class="social-icon">
+                  </a>
+                  <div class="qr-popup" v-if="activeQR === 'weibo'">
+                    <img src="@/assets/img/wechat.png" alt="微博二维码" class="qr-code">
+                  </div>
+                </div>
+                <div class="social-item">
+                  <a href="#" class="social-link" title="小红书" @click.prevent="showQRCode('xiaohongshu')">
+                    <img src="@/assets/img/rednote.png" alt="小红书" class="social-icon">
+                  </a>
+                  <div class="qr-popup" v-if="activeQR === 'xiaohongshu'">
+                    <img src="@/assets/img/wechat.png" alt="小红书二维码" class="qr-code">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -202,10 +219,14 @@ export default {
       },
       isSubmitting: false,
       submitMessage: '',
-      submitStatus: false
+      submitStatus: false,
+      activeQR: null, // 添加 activeQR 数据属性
     };
   },
   methods: {
+    showQRCode(type) {
+      this.activeQR = this.activeQR === type ? null : type;
+    },
     // 提交表单方法
     submitForm() {
       // 表单验证
@@ -390,13 +411,19 @@ export default {
 .info-icon {
   width: 50px;
   height: 50px;
-  background-color: rgba(52, 152, 219, 0.1);
-  border-radius: 50%;
+  background-color: transparent; /* 移除背景色 */
+  border-radius: 0; /* 移除圆角 */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 15px;
   flex-shrink: 0;
+}
+
+.contact-icon {
+  width: 30px; /* 设置图标大小 */
+  height: 30px;
+  object-fit: contain;
 }
 
 .info-icon i {
@@ -657,6 +684,42 @@ export default {
 /* 动画效果 */
 .wow {
   visibility: hidden;
+}
+
+/* 添加二维码弹窗样式 */
+.social-item {
+  position: relative;
+  margin-right: 15px;
+}
+
+.qr-popup {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.qr-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  display: block;
 }
 </style>
 

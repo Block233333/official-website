@@ -13,7 +13,7 @@
         <div class="col-md-4 col-sm-12 footer-contact">
           <h4>联系方式</h4>
           <p><i class="glyphicon glyphicon-map-marker"></i> 香港鰂魚涌華蘭路20號華蘭中心7樓7室</p>
-          <p><i class="glyphicon glyphicon-phone"></i> 888-888-888</p>
+          <p><i class="glyphicon glyphicon-phone"></i> +852 2814 1083</p>
           <p><i class="glyphicon glyphicon-envelope"></i> contact@zhimingzhe.com</p>
         </div>
         
@@ -25,10 +25,32 @@
             <li><a href="/companyintroduction">公司介绍</a></li>
             <li><a href="/contactus">联系我们</a></li>
           </ul>
+          <!-- 修改社交链接部分 -->
           <div class="social-links">
-            <a href="#" title="微信"><i class="fa fa-weixin"></i></a>
-            <a href="#" title="微博"><i class="fa fa-weibo"></i></a>
-            <a href="#" title="QQ"><i class="fa fa-qq"></i></a>
+            <div class="social-item">
+              <a href="#" class="social-link" title="微信" @click.prevent="showQRCode('weixin')">
+                <img src="@/assets/img/weixin.png" alt="微信" class="social-icon">
+              </a>
+              <div class="qr-popup" v-if="activeQR === 'weixin'">
+                <img src="@/assets/img/wechat.png" alt="微信二维码" class="qr-code">
+              </div>
+            </div>
+            <div class="social-item">
+              <a href="#" class="social-link" title="微博" @click.prevent="showQRCode('weibo')">
+                <img src="@/assets/img/weibo.png" alt="微博" class="social-icon">
+              </a>
+              <div class="qr-popup" v-if="activeQR === 'weibo'">
+                <img src="@/assets/img/wechat.png" alt="微博二维码" class="qr-code">
+              </div>
+            </div>
+            <div class="social-item">
+              <a href="#" class="social-link" title="小红书" @click.prevent="showQRCode('xiaohongshu')">
+                <img src="@/assets/img/rednote.png" alt="小红书" class="social-icon">
+              </a>
+              <div class="qr-popup" v-if="activeQR === 'xiaohongshu'">
+                <img src="@/assets/img/wechat.png" alt="小红书二维码" class="qr-code">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -38,14 +60,34 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "Footer",
   data() {
-    return {};
+    return {
+      activeQR: null
+    };
+  },
+  methods: {
+    showQRCode(type) {
+      this.activeQR = this.activeQR === type ? null : type;
+    },
+    handleClickOutside(e) {
+      if (!e.target.closest('.social-item')) {
+        this.activeQR = null;
+      }
+    }
+  },
+  mounted() {
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.handleClickOutside);
   }
 };
 </script>
+
 <style scoped>
 #footer {
   width: 100%;
@@ -134,26 +176,67 @@ export default {
   padding-left: 5px;
 }
 
+/* 修改社交链接样式 */
 .social-links {
   margin-top: 20px;
+  display: flex;
 }
 
-.social-links a {
-  display: inline-block;
+.social-item {
+  position: relative;
+  margin-right: 15px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 36px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  text-align: center;
-  line-height: 36px;
-  margin-right: 10px;
-  color: #fff;
   transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.social-link:hover {
   background: #3498db;
   transform: translateY(-3px);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.qr-popup {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.qr-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  display: block;
 }
 
 .footer-bottom {
@@ -186,6 +269,10 @@ export default {
   .footer-links h4:after {
     left: 50%;
     transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
   }
 }
 </style>

@@ -1,20 +1,6 @@
 <template>
   <!-- 头部整体盒子 -->
   <div id="header" class="container-fuild">
-    <!-- 头部顶部 -->
-    <div class="header-top container-fuild hidden-xs">
-      <div class="container">
-        <div class="server pull-left">
-          <span class="glyphicon glyphicon-earphone"></span>+852 2814 1083
-          <span class="glyphicon glyphicon-envelope"></span>zhimingzhe.com
-          <span class="glyphicon glyphicon-time"></span>7x24小时为您服务
-        </div>
-        <div class="shejiao pull-right" @click="goToContact" style="cursor: pointer;">
-          <span class="glyphicon glyphicon-hand-right"></span>赶快联系我们吧！
-          <span class="glyphicon glyphicon-hand-left"></span>
-        </div>
-      </div>
-    </div>
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
@@ -42,6 +28,7 @@
         </li>
       </ul>
     </div>
+    
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
@@ -93,15 +80,15 @@ export default {
           children: []
         },
         {
-          name: "平台介绍",
+          name: "产品介绍",
           path: "/software",
           children: [
             {
-              name: "人生论坛",
+              name: "知命者平台",
               path: "/software/smartTown"
             },
             {
-              name: "命运论坛",
+              name: "知命者智能程式",
               path: "/software/bigData"
             }
           ]
@@ -121,11 +108,11 @@ export default {
           path: "/companyintroduction",
           children: []
         },
-        // {
-        //   name: "工作机会",
-        //   path: "/jobchance",
-        //   children: []
-        // },
+        {
+          name: "合作伙伴",
+          path: "/jobchance",
+          children: []
+        },
         {
           name: "联系我们",
           path: "/contactus",

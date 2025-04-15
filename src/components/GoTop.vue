@@ -1,6 +1,7 @@
 <template>
   <div id="GoTop" @click="GoTop()" v-show="showButton" class="animated">
-    <i class="fa fa-chevron-up"></i>
+    <i class="fa fa-arrow-up"></i>
+    <span class="tooltip">返回顶部</span>
   </div>
 </template>
 <script>
@@ -41,8 +42,8 @@ export default {
 </script>
 <style scoped>
 #GoTop {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -54,22 +55,69 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
+  overflow: visible;
 }
 
 #GoTop:hover {
   background-color: #2980b9;
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#GoTop:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 #GoTop i {
   font-size: 24px;
 }
 
+.tooltip {
+  position: absolute;
+  top: -40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -6px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.7);
+}
+
 .animated {
-  animation: fadeIn 0.5s;
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes fadeIn {
