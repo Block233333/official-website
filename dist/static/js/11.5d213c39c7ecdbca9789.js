@@ -1,2 +1,0 @@
-webpackJsonp([11],{RxBX:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"container-fluid p-0",attrs:{id:"Software"}},[t("router-view")],1)},staticRenderFns:[]};var a=n("VU/8")({name:"Software"},r,!1,function(e){n("XSqF")},"data-v-71705c35",null);t.default=a.exports},XSqF:function(e,t){}});
-//# sourceMappingURL=11.5d213c39c7ecdbca9789.js.map
