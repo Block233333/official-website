@@ -21,9 +21,16 @@
             <i class="underline"></i>
           </router-link>
           <dl v-if="item.children.length>0">
-            <dt v-for="(i,n) in item.children" :key="n">
-              <router-link :to="i.path">{{i.name}}</router-link>
-            </dt>
+            <router-link
+              v-for="(i,n) in item.children"
+              :key="n"
+              :to="i.path"
+              class="dropdown-link"
+            >
+              <dt>
+                {{i.name}}
+              </dt>
+            </router-link>
           </dl>
         </li>
       </ul>
@@ -312,8 +319,20 @@ export default {
 #header .header-nav .header-nav-wrapper > li:hover dl {
   display: block;
 }
-#header .header-nav .header-nav-wrapper > li > dl > dt:hover {
+#header .header-nav .header-nav-wrapper > li > dl > .dropdown-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+#header .header-nav .header-nav-wrapper > li > dl > .dropdown-link > dt {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
   cursor: pointer;
+  background: #fff;
+  transition: background 0.2s;
+}
+#header .header-nav .header-nav-wrapper > li > dl > .dropdown-link > dt:hover {
   background: #ccc;
 }
 @media screen and (max-width: 997px) {
