@@ -1,1 +1,24 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>知命者公司网站</title><script type=text/javascript src="https://api.map.baidu.com/api?v=3.0&ak=8nJIffqzPApcVvVQuBDwpqTEf78DkIXg"></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin=anonymous referrerpolicy=no-referrer><link href=./static/css/app.d92c7cadd591c1b7d23b6f991ce9992a.css rel=stylesheet></head><body data-spy=scroll data-target=#myScrollspy><div id=app></div><script type=text/javascript src=./static/js/manifest.9dcfd5f26534103f4967.js></script><script type=text/javascript src=./static/js/vendor.f6ae5d53e714858b1239.js></script><script type=text/javascript src=./static/js/app.e8d0b7f46ad2453cc5a4.js></script></body></html>
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>知命者公司网站</title><link rel=dns-prefetch href=//api.map.baidu.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=preconnect href=https://api.map.baidu.com><link rel=preconnect href=https://cdnjs.cloudflare.com><link rel=preload href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css></noscript><script>// 百度地图API加载状态
+      window.bMapLoaded = false;
+      window.bMapLoadPromise = new Promise((resolve, reject) => {
+        // 延迟加载百度地图API
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = 'https://api.map.baidu.com/api?v=3.0&ak=8nJIffqzPApcVvVQuBDwpqTEf78DkIXg&callback=initBMap';
+            script.async = true;
+            script.onerror = function() {
+              console.error('百度地图API加载失败');
+              reject(new Error('百度地图API加载失败'));
+            };
+            document.head.appendChild(script);
+            
+            // 设置全局回调函数
+            window.initBMap = function() {
+              window.bMapLoaded = true;
+              console.log('百度地图API加载完成');
+              resolve();
+            };
+          }, 500); // 减少延迟时间
+        });
+      });</script><link href=./static/css/app.85faa380e811d3e16430a5be373814e0.css rel=stylesheet></head><body data-spy=scroll data-target=#myScrollspy><div id=app></div><script type=text/javascript src=./static/js/manifest.48e84f3b886276c4bd07.js></script><script type=text/javascript src=./static/js/vendor.69a3a0d58556c5c2fbd6.js></script><script type=text/javascript src=./static/js/app.b453b66a5f2703b05aae.js></script></body></html>
